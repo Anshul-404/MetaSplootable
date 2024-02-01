@@ -1,14 +1,14 @@
 # Setup Process
-================
+------------------------------
 
-# Setting up docker and Metsploitable2
+## Setting up docker and Metsploitable2
 ---------------------------------------
 - Install docker on pi
 - Install metasploitable on docker
 	- `docker search metasploitable`
 	- `docker pull <first_result>`
 
-# Setting Up interface on Kali and docker
+## Setting Up interface on Kali and docker
 ------------------------------------------
 - Enable 'dummy' kernel module:
 	- `sudo modprobe dummy`
@@ -36,12 +36,11 @@
 
 - Use docker-compose.yml to start docker and configure ports  
 
-## Note: 
+### Note: 
  - You must do this on both your Kali Machine (attacking system) and PI (metasploitable2 machine).
  - You have to use different IPs for both Kali and metasploitable2 machine.
 
 
-OR
-===
+### OR
 
 - Download and install VMware and boot the metasploitable image from https://sourceforge.net/projects/metasploitable/files/latest/download -> easier option fr
