@@ -3,8 +3,8 @@
 
 ## Introduction
 -----------------
-- vsftpd, is an `FTP server` for Unix-like systems, including Linux
-- Port: 21
+- vsftpd is an `FTP server` for Unix-like systems, including Linux
+- Port: 21 which is the default FTP port.
 
 ## Anonymous Login
 -------------------
@@ -14,8 +14,13 @@
 ## Bruteforcing via Hydra
 --------------------------
 - Default and weak passwords are vulnerable to bruteforce attacks leading to unauthorized access of FTP shares.
-- Tried bruteforcing using common usernames and password lists but no luck:
+- Trying to bruteforce using common usernames and password lists:
 	- `hydra 172.16.242.129 ftp -L /usr/share/seclists/Usernames/Names/names.txt -P /usr/share/wordlists/rockyou.txt -t 50`
+		- ftp: Specifies the protocol to attack, in this case, FTP.
+		- -L : Specifies the path to a file containing a list of usernames to try during the attack.
+		- -P : Specifies the path to a file containing a list of passwords to attempt.
+		- -t 50: Sets the number of parallel connections (threads) to use for the attack. It is not generally recommanded to use these large number of threads as they can trigger security mechanisms on the target but since this is on our local machine, 50 threads are fine.
+- However, bruteforcing lead to no correct credentials that can be used to login via FTP.
 
 ## Searchsploit
 ----------------
@@ -37,7 +42,7 @@
 
 - The `vsf_sysutil_extra()` function contains the following code. We can clearly see that it attempts to open port 6200 through `htons(6200)` and provides a shell with `execl("/bin/sh")` so that attacker can interact with the system.
 
-![backdoor code](https://static.packt-cdn.com/products/9781786463166/graphics/image_01_018.jpg)
+- ![backdoor code](https://static.packt-cdn.com/products/9781786463166/graphics/image_01_018.jpg)
 
 ### Impact Analysis
 --------------------
@@ -71,6 +76,11 @@
 
 - Metsploit Exploitation:
 	- We can use the `exploit/unix/ftp/vsftpd_234_backdoor` exploit from metasploit and gain access through backdoor easily. [https://subscription.packtpub.com/book/security/9781786463166/1/ch01lvl1sec18/vulnerability-analysis-of-vsftpd-2-3-4-backdoor]
+
+### Patches and Updates:
+-------------------------
+- The developers of VSFTPD responded to this vulnerability and released newer versions of the software with security patches and fixes.
+- All users were advised to update to the latest version as soon as possible to protect their servers from exploitation.
 
 ### Mitigation
 ---------------
