@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  metasploitable2:
+    image: tleemcjr/metasploitable2
+    hostname: victim
+    container_name: metasploitable2
+    stdin_open: true # -i in docker
+    tty: true # -t in docker
+    ports: # PORTS HERE
+          192.168.1.69:80:8000
+    networks:
+      metspi_net:
+        ipv4_address: 192.168.1.69
+
+networks:
+  metspi_net:
+    external: true
