@@ -41,6 +41,6 @@
  - You have to use different IPs for both Kali and metasploitable2 machine.
 
 
-### OR
+### OR (Easier Option)
 
-- Download and install VMware and boot the metasploitable image from https://sourceforge.net/projects/metasploitable/files/latest/download -> easier option fr
+- Download and install VMware and boot the metasploitable image from https://sourceforge.net/projects/metasploitable/files/latest/download 
