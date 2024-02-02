@@ -21,11 +21,13 @@ The project is organized into folders named after the service being assessed, fo
 
 ### Example Directory Structure
 
+```
 Vulnerability Assessment/\
   └── ServiceVersion_PortNo/\
     ├── ServiceVersion_PortNo.md\
     └── Scripts/\
       └── example_exploit_script.sh\
+```
 
 ## Methodology
 
