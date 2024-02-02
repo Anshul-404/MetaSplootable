@@ -86,7 +86,7 @@
 	- Execute the attack using run or exploit command:
 		- `exploit`
 
-		![backdoor command injection](../../images/backdoor_command_inject_vsftpd_msf_2.jpeg)
+		![backdoor command injection](../../images/backdoor_command_inject_vsftpd_msf_3.jpeg)
 
 
 #### Patches and Updates:
