@@ -20,13 +20,12 @@ The project is organized into folders named after the service being assessed, fo
 - An `Scripts` folder containing all relevant exploit scripts, codes, or PoC files used during the assessment.
 
 ### Example Directory Structure
-`
-Vulnerability Assessment/
-  └── ServiceVersion_PortNo/
-    ├── ServiceVersion_PortNo.md
-    └── Scripts/
-      └── example_exploit_script.sh
-`
+
+Vulnerability Assessment/\
+  └── ServiceVersion_PortNo/\
+    ├── ServiceVersion_PortNo.md\
+    └── Scripts/\
+      └── example_exploit_script.sh\
 
 ## Methodology
 
