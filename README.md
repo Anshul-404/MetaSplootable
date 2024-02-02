@@ -17,7 +17,7 @@ The project is organized into folders named after the service being assessed, fo
   - **Mitigation**: Strategies and recommendations for mitigating the vulnerabilities to secure the system.
   - **References**: Links to external resources, articles, and documentation that support the assessment findings.
   - **Conclusion**: Summary of the assessment, including the overall risk and recommendations for future security posture improvements.
-- An `Scripts` folder containing all relevant exploit scripts, codes, or PoC files used during the assessment.
+- A `Scripts` folder containing all relevant exploit scripts, codes, or PoC files used during the assessment.
 
 ### Example Directory Structure
 
