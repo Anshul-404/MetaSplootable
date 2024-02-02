@@ -1,8 +1,8 @@
-# Vulnerability Assessment Project on Metasploitable2
+# Metasplootable Vulnerability Assessment Project
 
 ## Overview
 
-This repository contains a detailed vulnerability assessment of Metasploitable2, an intentionally vulnerable virtual machine designed for training and educational purposes in the field of cybersecurity. The assessment covers various services and applications, documenting identified vulnerabilities, their impacts, and mitigation strategies.
+"Metasplootable" is a comprehensive vulnerability assessment project focused on the Metasploitable2 virtual machine. This project aims to identify, document, and demonstrate how to exploit vulnerabilities found within Metasploitable2, providing insights into the importance of security practices and mitigation strategies.
 
 ## Project Structure
 
