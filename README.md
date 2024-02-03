@@ -1,6 +1,6 @@
 # Metasplootable Vulnerability Assessment Project
 
-![metasplootable](./images/Metasplootable2.png)
+  ![metasplootable](./images/Metasplootable2.png)
 
 
 ## Overview
