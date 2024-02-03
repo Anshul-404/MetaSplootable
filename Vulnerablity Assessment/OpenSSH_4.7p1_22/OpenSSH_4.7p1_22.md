@@ -97,7 +97,6 @@
 - The developers of OpenSSH responded to this vulnerability and released newer versions of the software with security patches and fixes.
 - All users were advised to update to the latest version as soon as possible to protect their servers from exploitation.
 
-
 ## Mitigations
 
 - Use Strong Passwords: Implement strong, complex passwords that are difficult to guess.
@@ -105,7 +104,6 @@
 - Limit SSH Access by IP: Restrict SSH access to known IP addresses or ranges through firewall rules or SSH configuration.
 - Monitor SSH Access Logs: Regularly monitor SSH logs for unauthorized access attempts and take action accordingly.
 - Keep SSH Software Up-to-Date: Regularly update SSH server software to ensure all security patches are applied.
-
 
 ## Conclusion
 
@@ -115,6 +113,10 @@
 - Recommended actionable steps include strong passwords, changing default SSH ports, and regular software updates to enhance security.
 - The report underscores the importance of continuous security practices to protect against potential exploits.
 
+## References
 
+- https://www.exploit-db.com/exploits/45233
+- https://www.cvedetails.com/vulnerability-list/vendor_id-97/product_id-585/version_id-430455/Openbsd-Openssh-4.7p1.html?page=1&order=1&trc=31&sha=a0f995a88b5436a219ecc740747bbdf897e89a10
+- https://isc.sans.edu/diary/OpenSSH+user+enumeration+CVE201815473/24004/ 
 
 

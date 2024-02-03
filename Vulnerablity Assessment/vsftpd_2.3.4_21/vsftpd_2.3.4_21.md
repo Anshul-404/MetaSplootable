@@ -43,12 +43,6 @@
 
 ![backdoor code](https://static.packt-cdn.com/products/9781786463166/graphics/image_01_018.jpg)
 
-#### Impact Analysis
-
-- Since this vulnerability starts a backdoor, it gives Remote Code Execution [RCE] and full access of the system as the user that was used to configure the vsftpd service on the system.
-- The attacker can easily pretend to be the original user and modify/harm the system files.
-- Therefore, the impact level of this vulnerability is high.
-
 #### Proof of Concept
 
 - This vulnerability can be exploited either through Metasploit or manually through an automated script or command line.
@@ -89,6 +83,12 @@
 		![backdoor command injection](../../images/backdoor_command_inject_vsftpd_msf_3.jpeg)
 
 
+#### Impact Analysis
+
+- Since this vulnerability starts a backdoor, it gives Remote Code Execution [RCE] and full access of the system as the user that was used to configure the vsftpd service on the system.
+- The attacker can easily pretend to be the original user and modify/harm the system files.
+- Therefore, the impact level of this vulnerability is high.
+
 #### Patches and Updates:
 
 - The developers of vsftpd responded to this vulnerability and released newer versions of the software with security patches and fixes.
@@ -100,15 +100,15 @@
 - Regular updates and stronger credentials.
 - Setting up services as non-root user in a sandbox or isolated environment.
 
-## References
-
-- https://www.tenable.com/plugins/nessus/55523
-- https://subscription.packtpub.com/book/security/9781786463166/1/ch01lvl1sec18/vulnerability-analysis-of-vsftpd-2-3-4-backdoor
-- https://www.exploit-db.com/exploits/49757
-
 ## Conclusion
 
 - The examination of the vsftpd 2.3.4 backdoor vulnerability underscores the critical importance of maintaining robust security practices. 
 - This vulnerability illustrates how seemingly minor oversights can lead to significant security breaches, enabling unauthorized remote code execution.
 - Effective mitigation involves regular updates, stringent software integrity checks, and operating services with minimal privileges.
 - This case study highlights the necessity for continuous vigilance and proactive security measures to protect against sophisticated cyber threats.
+
+## References
+
+- https://www.tenable.com/plugins/nessus/55523
+- https://subscription.packtpub.com/book/security/9781786463166/1/ch01lvl1sec18/vulnerability-analysis-of-vsftpd-2-3-4-backdoor
+- https://www.exploit-db.com/exploits/49757
