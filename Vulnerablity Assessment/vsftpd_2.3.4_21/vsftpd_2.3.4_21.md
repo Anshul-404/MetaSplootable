@@ -47,7 +47,7 @@
 
 - Since this vulnerability starts a backdoor, it gives Remote Code Execution [RCE] and full access of the system as the user that was used to configure the vsftpd service on the system.
 - The attacker can easily pretend to be the original user and modify/harm the system files.
-- Therefore, the impact level of this vulnerability is very high.
+- Therefore, the impact level of this vulnerability is high.
 
 #### Proof of Concept
 
