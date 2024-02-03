@@ -1,11 +1,11 @@
-# Metasplootable Vulnerability Assessment Project
+# MetaSplootable Vulnerability Assessment Project
 
   ![metasplootable](./images/Metasplootable2.png)
 
 
 ## Overview
 
-"Metasplootable" is a comprehensive vulnerability assessment project focused on the Metasploitable2 virtual machine. This project aims to identify, document, and demonstrate how to exploit vulnerabilities found within Metasploitable2, providing insights into the importance of security practices and mitigation strategies.
+"MetaSplootable" is a comprehensive vulnerability assessment project focused on the Metasploitable2 virtual machine. This project aims to identify, document, and demonstrate how to exploit vulnerabilities found within Metasploitable2, providing insights into the importance of security practices and mitigation strategies.
 
 ## Project Structure
 
