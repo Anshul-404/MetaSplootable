@@ -59,16 +59,20 @@
 ## Bruteforcing via Hydra
 
 - Default and weak passwords are vulnerable to bruteforce attacks leading to unauthorized access via SSH.
-- We can bruteforce the previously obtained usernames with a password list:
-	- `hydra ssh 172.16.242.129 -L wordlists/users.txt -P wordlists/pass.txt -t 10`
+- The most important factor in success of bruteforce attacks is choosing the right wordlist.
+- In this case, we will be using the same user list we obtained previously for both users and passwords bruteforce:
+	- `hydra ssh 172.16.242.129 -L wordlists/users.txt -P wordlists/users.txt -t 10`
 		- ssh: Specifies the protocol to attack, in this case, SSH.
 		- -L : Specifies the path to a file containing a list of usernames to try during the attack.
 		- -P : Specifies the path to a file containing a list of passwords to attempt.
 		- -t 50: Sets the number of parallel connections (threads) to use for the attack. It is not generally recommanded to use these large number of threads as they can trigger security mechanisms on the target but since this is on our local machine, 50 threads are fine.
 
-![hydra results](../../images/OpenSSH_4.7p1_hydra.jpeg)
+![hydra results](../../images/OpenSSH_4.7p1_hydra2.jpeg)
 
-- As we can see, a simple bruteforce attack using automated tools such as hydra can reveal weak crendentials. In this case, `user:user`
+- As we can see, a simple bruteforce attack using automated tools such as hydra can reveal weak crendentials. In this case, we obtained the following credentials:
+	- `postgres : postgres`
+	- `service : service`
+	- `user : user`
 
 ### Proof of Concept
 
