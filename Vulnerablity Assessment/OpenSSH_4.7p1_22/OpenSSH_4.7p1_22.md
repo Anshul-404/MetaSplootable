@@ -24,11 +24,11 @@
 		- This message is a standard response indicating that the authentication attempt has failed, but it does not cause the server to terminate the connection.
 		- The `SSH2_MSG_USERAUTH_FAILURE` message and the fact that the server doesn't terminate the connection states that the username used for authentication was indeed invalid.
 	- User Valid (Exists):
-		- When attacker attempts to authenticate with a username that does not exist on the server using the malformed packet, the `userauth_pubkey()` function checks the validity of the username and determines that it is valid.
+		- When attacker attempts to authenticate with a username that exists on the server using the malformed packet, the `userauth_pubkey()` function checks the validity of the username and determines that it is valid.
 		- Thus, the process of authenticating the attacker with the provided username continues.
 		- However, The packet's malformed nature eventually causes a failure in `sshpkt_get_u8()`, a function likely involved in parsing packet data.
 		- Instead of returning an error message as in the previous case, this failure leads the server to call `fatal()`, a function that handles critical errors by logging the error and then terminating the connection.
-		- Therefore, the fact that the server closes its connection to the attacker abruptly, without sending the standard SSH2_MSG_USERAUTH_FAILURE message states that the username used for authentication was valid
+		- Therefore, the fact that the server closes its connection to the attacker abruptly, without sending the standard SSH2_MSG_USERAUTH_FAILURE message states that the username used for authentication was valid.
 
 #### Proof of Concept
 
@@ -65,7 +65,7 @@
 		- ssh: Specifies the protocol to attack, in this case, SSH.
 		- -L : Specifies the path to a file containing a list of usernames to try during the attack.
 		- -P : Specifies the path to a file containing a list of passwords to attempt.
-		- -t 50: Sets the number of parallel connections (threads) to use for the attack. It is not generally recommanded to use these large number of threads as they can trigger security mechanisms on the target but since this is on our local machine, 50 threads are fine.
+		- -t 10: Sets the number of parallel connections (threads) to use for the attack. It is not generally recommanded to use these large number of threads as they can trigger security mechanisms on the target but since this is on our local machine, 10 threads are fine.
 
 ![hydra results](../../images/OpenSSH_4.7p1_hydra2.jpeg)
 
