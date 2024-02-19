@@ -55,7 +55,7 @@
 	- Run the exploit using:
 		- `exploit` or `run`
 
-	![metasploit options](../../images/smbd_3.X-4.X_metasploit_1.jpeg)
+	![metasploit exploit](../../images/smbd_3.X-4.X_metasploit_2.jpeg)
 
 	- As we can see, we got a shell as root and we are able to run commands.
 
@@ -75,7 +75,7 @@
     	- Running the script
     		- `python3 exploit.py 192.168.1.6 9001`
 
-    	![metasploit options](../../images/smbd_3.X-4.X_script.jpeg)
+    	![exploit script](../../images/smbd_3.X-4.X_script.jpeg)
 
     - As we can see, we got a shell as root and we are able to run commands.
 
